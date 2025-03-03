@@ -174,6 +174,17 @@ export class SystemAccessPoint extends EventEmitter {
   }
 
   /**
+   * Send ping through web socket.
+   */
+  public pingWebSocket(): void {
+    if (!this.webSocket || this.webSocket.readyState === WebSocket.CLOSED) {
+      throw new Error("Web socket is not open");
+    }
+
+    this.webSocket.ping();
+  }
+
+  /**
    * Gets the configuration from the system access point.
    * @returns {Promise.<Configuration>} The system access point configuration.
    */
