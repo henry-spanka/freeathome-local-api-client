@@ -46,7 +46,8 @@
     "test": "ts-node --project ./tsconfig.spec.json node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "test:ci": "nyc npm run test",
     "lint": "eslint . --fix --max-warnings=0",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "rxjs": "^7.8.1",
